@@ -24,10 +24,10 @@ func Init(info *DBInfo) {
 	var err error
 
 	switch os.Getenv("MOGUTOU_DB") {
-	case "mysql":
-		db, err = gorm.Open(mysql.Open(info.Name+":"+info.Password+"@tcp("+info.Addr+")/"+info.DBname+"?charset=utf8&parseTime=True&loc=Local"), &gorm.Config{})
-	default:
+	case "sqlite":
 		db, err = gorm.Open(sqlite.Open("mgt.db"), &gorm.Config{})
+	default:
+		db, err = gorm.Open(mysql.Open(info.Name+":"+info.Password+"@tcp("+info.Addr+")/"+info.DBname+"?charset=utf8&parseTime=True&loc=Local"), &gorm.Config{})
 	}
 
 	if err != nil {
