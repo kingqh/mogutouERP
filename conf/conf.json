@@ -1,8 +1,8 @@
 {
     "mysql": {
         "name": "root",
-        "password": "123",
+        "password": "root",
         "DBname": "mgt",
-        "addr": "127.0.0.1:3306"
+        "addr": "45.40.199.158:3306"
     }
 }
